@@ -1,7 +1,6 @@
 #Console Layer for Pebble
   Creates a layer allowing you to APP_LOG to the screen or perform any other scrolling text output.  
-For the npm package, see:  
-https://www.npmjs.com/package/pebble-console-layer
+For the npm package, see:  https://www.npmjs.com/package/pebble-console-layer
 
 ##TL;DR How to use:
 #####Include:  
