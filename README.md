@@ -2,7 +2,7 @@
   Creates a layer allowing you to APP_LOG to the screen or perform any other scrolling text output.  
 For the npm package, see:  https://www.npmjs.com/package/pebble-console-layer
 
-##TL;DR How to use:
+##TL;DR: How to use
 #####Include:  
     #include "console-layer.h"
 
@@ -17,7 +17,7 @@ For the npm package, see:  https://www.npmjs.com/package/pebble-console-layer
 #####Destroy:
     layer_destroy(my_console_layer);
 
-#####TL;DR Notes:  
+#####TL;DR: Notes
 - The console layer has 500 byte buffer (by default) which written text is deep copied into.  
 - You can have more than one console layer at the same time, each has a separate text buffer & style.  
 - Uses a standard Layer pointer, so most standard Pebble layer functions work.  
