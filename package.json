@@ -1,0 +1,29 @@
+{
+    "author": "robisodd",
+    "dependencies": {},
+    "keywords": [],
+    "name": "console-layer-v2.1",
+    "pebble": {
+        "capabilities": [
+            ""
+        ],
+        "displayName": "Console Layer v2.1",
+        "enableMultiJS": true,
+        "messageKeys": [],
+        "projectType": "native",
+        "resources": {
+            "media": []
+        },
+        "sdkVersion": "3",
+        "targetPlatforms": [
+            "aplite",
+            "basalt",
+            "chalk"
+        ],
+        "uuid": "5ae58854-c1de-4a6c-8f63-719bae5438cd",
+        "watchapp": {
+            "watchface": false
+        }
+    },
+    "version": "2.1.0"
+}
