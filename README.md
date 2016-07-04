@@ -1,4 +1,5 @@
-#Console Layer Basic
+#Console Layer for Pebble
+  Creates a layer allowing you to APP_LOG to the screen or perform any other scrolling text output.
 
 ##TL;DR How to use:
 #####Create:  
@@ -79,6 +80,8 @@ You can just use the standard `layer_destroy` to destroy a console layer, howeve
 
 #####Gets
 
+Functions to get the console layer's current style settings
+
     GColor         console_layer_get_background_color(Layer *console_layer)
     GColor         console_layer_get_text_color      (Layer *console_layer)
     GTextAlignment console_layer_get_alignment       (Layer *console_layer)
@@ -87,13 +90,15 @@ You can just use the standard `layer_destroy` to destroy a console layer, howeve
 
 #####Sets  
 
+Functions to change the console layer's style settings
+
     void console_layer_set_background_color(Layer *console_layer, GColor         background_color)
     void console_layer_set_text_color      (Layer *console_layer, GColor         text_color)
     void console_layer_set_alignment       (Layer *console_layer, GTextAlignment alignment)
     void console_layer_set_word_wrap       (Layer *console_layer, bool           word_wrap)
     void console_layer_set_font            (Layer *console_layer, GFont          font)
 
-Or set the layer's style with one function  
+Or set the console layer's style with one function  
 
     void console_layer_set_style(Layer         *console_layer,
                                  GColor         text_color,
@@ -105,10 +110,6 @@ Or set the layer's style with one function
 
 #####Write Text
 
-Clear the layer of its text (leaves the style alone)  
-
-    void console_layer_clear(Layer *console_layer)
-    
 Write text to the layer using layer's style  
 
     void console_layer_write_text(Layer *console_layer, char *text)
@@ -123,6 +124,10 @@ Write styled text to the buffer
                                          GTextAlignment alignment,
                                          int word_wrap)
 
+Clear the layer of its text (leaves the style alone)  
+
+    void console_layer_clear(Layer *console_layer)
+    
 ----------------------------------------
 
 ##How to use Console Layer (Full Instructions)
@@ -239,7 +244,7 @@ Any changes performed in steps 2 and 3 won't be displayed until the next time th
 
 However, by default, the layer will be dirtied anytime any text is written to the layer or the layer's settings change.  To change this, in the console.h file is a line that sets true or false to the following setting:  
 
-    dirty_console_layer_automatically
+    dirty_console_layer_automatically true
     
 - If set to true, layer_mark_dirty() will be called any time the console_layer changes  
 - If set to false, you'll have to manually call "layer_mark_dirty(my_console_layer)" any time you want to see changes.  
