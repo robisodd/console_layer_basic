@@ -1,7 +1,12 @@
 #Console Layer for Pebble
-  Creates a layer allowing you to APP_LOG to the screen or perform any other scrolling text output.
+  Creates a layer allowing you to APP_LOG to the screen or perform any other scrolling text output.  
+For the npm package, see:  
+https://www.npmjs.com/package/pebble-console-layer
 
 ##TL;DR How to use:
+#####Include:  
+    #include "console-layer.h"
+
 #####Create:  
     Layer *root_layer = window_get_root_layer(my_window);
     Layer *my_console_layer = console_layer_create(layer_get_frame(root_layer));
