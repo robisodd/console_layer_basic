@@ -23,7 +23,8 @@ https://www.npmjs.com/package/pebble-console-layer
 - You can have more than one console layer at the same time, each has a separate text buffer & style.  
 - Uses a standard Layer pointer, so most standard Pebble layer functions work.  
 - You can change the layer style which can affect text even after text is written.  
-- Layer will automatically dirty after writing, unless you turn that setting off.  
+- Layer will automatically dirty after writing, unless you turn that setting off.
+- The console layer cannot print variable values.  Use `snprintf()` to add these features.  
 
 
 ----------------------------------------
@@ -205,7 +206,7 @@ To write to the console layer with the layer's styling, use the function:
 
     console_layer_write_text(my_console_layer, "Hello World");
   
-You can write any text the Pebble supports, including emoji and in Unicode.  You can also include newline (\n) characters, but any text after the newline won't be displayed unless you set word wrap to true.  Writing text will deep copy the text to the layer's buffer, and so therefore can be from a temporary source.  The text will appear on the layer with the layer's font, colors and other settings.  If you call any `console_layer_set_*()` functions after the text is written, it will reflect the new changes.  The `console_layer_write_text` function does not support displaying variables and advanced text.  To display these, use the snprintf() function:  
+You can write any text the Pebble supports, including emoji and in Unicode.  You can also include newline (\n) characters, but any text after the newline won't be displayed unless you set word wrap to true.  Writing text will deep copy the text to the layer's buffer, and so therefore can be from a temporary source.  The text will appear on the layer with the layer's font, colors and other settings.  If you call any `console_layer_set_*()` functions after the text is written, it will reflect the new changes.  The `console_layer_write_text` function does not support displaying variables and advanced text.  To display these, use the `snprintf()` function:  
 
     char text[10];
     snprintf(text, sizeof(text), "Answer: %d", answer);
